@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient's Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3><i>Patient's Data</i></h3>
+        <br>
+        <table class="table table-bordered table-striped">
+            <thead class="table table-secondary">
+                <th>Patient Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Disease</th>
+                <th>Status</th>
+                
+                <th>Operations</th>
+            </thead>
+            {% for x in a %}
+            <tr>
+                <td>{{x.id}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>{{x.disease}}</td>
+                <td>{{x.status}}</td>
+                
+                <td>
+                    <a href="delete_patient/{{x.id}}"><i class="btn btn-outline-danger bi bi-trash-fill"></i></a>
+                    <a href="update_patient/{{x.id}}"><i class="btn btn-outline-primary bi bi-pencil-square"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <p>
+            <a href="add_patient/"><i class="btn btn-info">Add Records</i></a>
+            <a href="back"><i class="btn btn-warning">Back</i></a>
+        </p>
+
+    </div>
+</body>
+
+</html>
